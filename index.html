@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventos Argentinos - Desarrollo de productos reales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primario: #0097d1;
+      --secundario: #ffca28;
+      --gris-fondo: #f7f7f7;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background-color: #fff;
+    }
+    header {
+      background: url('fondo-hero.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    .btn {
+      background: var(--primario);
+      color: white;
+      padding: 1rem 2rem;
+      margin: 1rem 0.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primario);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--gris-fondo);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .cta {
+      background: var(--primario);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .cta button {
+      background: var(--secundario);
+      color: #111;
+    }
+    footer {
+      background: #eee;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Convertimos ideas en productos reales</h1>
+    <p>Desarrollo de productos, optimización industrial y protección intelectual con experiencia real de fábrica.</p>
+    <div>
+      <button class="btn">Quiero desarrollar un producto</button>
+      <button class="btn">Quiero optimizar mi fábrica</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Servicios principales</h2>
+    <div class="grid">
+      <div class="card">🧠 Consultoría en innovación</div>
+      <div class="card">🧰 Diseño CAD para producción</div>
+      <div class="card">⚙️ Automatización y eficiencia</div>
+      <div class="card">🏭 Producción tercerizada</div>
+      <div class="card">🔐 Patentes y propiedad intelectual</div>
+      <div class="card">🌏 Maquinaria importada</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quiénes somos</h2>
+    <div class="card">
+      <p>Somos un equipo de inventores, diseñadores e ingenieros con experiencia real en la creación, desarrollo y producción de productos innovadores. Creamos el Mate Eléctrico, patentado en Argentina y en el exterior. Hemos producido más de 10.000 unidades, exportamos a más de 20 países, y transformamos una idea en una empresa con impacto.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Casos reales</h2>
+    <div class="grid">
+      <div class="card">✨ Mate Eléctrico: producto patentado y exportado internacionalmente.</div>
+      <div class="card">✨ Producción tercerizada con talleres locales y control de calidad propio.</div>
+      <div class="card">✨ Desarrollo de packaging reutilizable con identidad de marca.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Premios y reconocimientos</h2>
+    <div class="grid">
+      <div class="card">🏆 Premio NAB Show Las Vegas 2018</div>
+      <div class="card">🏆 Premio FedEx 2022</div>
+      <div class="card">🏆 Premio Innovar 2021</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="grid">
+      <div class="card">✅ Experiencia real: más de 10.000 unidades producidas, patentes activas, exportación.</div>
+      <div class="card">✅ Enfoque integral: del diseño al producto final con cadena de producción incluida.</div>
+      <div class="card">✅ Protección legal: marcas, patentes y licencias para que tu idea esté segura.</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>¿Tenés una idea o necesitás mejorar tu producción?</h2>
+    <p>Contactanos para trabajar juntos desde el diseño hasta la fabricación.</p>
+    <button class="btn">Hablar por WhatsApp</button>
+  </section>
+
+  <footer>
+    © 2025 Inventos Argentinos. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
