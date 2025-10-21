@@ -25,7 +25,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
+      color: gray;
       padding: 0 1rem;
     }
     header h1 {
@@ -40,6 +40,16 @@
     .btn {
       background: var(--primario);
       color: white;
+      padding: 1rem 2rem;
+      margin: 1rem 0.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+	   .btn2 {
+      background: #ffca28(--primario);
+      color: black;
       padding: 1rem 2rem;
       margin: 1rem 0.5rem;
       border: none;
@@ -69,6 +79,12 @@
       border-radius: 12px;
       text-align: center;
     }
+	      .card2 {
+      background: var(--primario);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
     .cta {
       background: var(--primario);
       color: white;
@@ -86,34 +102,73 @@
       font-size: 0.9rem;
       color: #555;
     }
+	  #proceso-consultoria {
+        background-color: var(--secundario); /* Usando la variable amarilla definida en :root */
+        /* Opcionalmente, puedes usar un color hexadecimal o el nombre del color: */
+        /* background-color: #ffca28; */ 
+    }
+	      .cta2 {
+      background: var(--secundario);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
   </style>
 </head>
 <body>
   <header>
+	    <h1><img src="logo-inventos-argentinos.png" width="300" height="auto" alt="Inventos Argentinos"/></h1>
     <h1>Convertimos ideas en productos reales</h1>
     <p>Desarrollo de productos, optimización industrial y protección intelectual con experiencia real de fábrica.</p>
     <div>
-      <button class="btn">Quiero desarrollar un producto</button>
-      <button class="btn">Quiero optimizar mi fábrica</button>
+    <a href="https://wa.me/5491135858867?text=Hola,%20me%20interesa%20la%20consultoría%20para%20inventores%20que%20ofrecen." class="btn">
+    Quiero consultoría para mi emprendimiento
+</a>
     </div>
   </header>
+<section class="cta2" id="proceso-consultoria">
+    <h2>Nuestra Metodología de Consultoría</h2>
+    <div class="grid">
+        <div class="card2">
+            <h3>1. Diagnóstico Estratégico</h3>
+            <p><strong>Videollamada de 1 hora</strong> para auditar el estado actual del proyecto, identificar los cuellos de botella y definir las áreas con mayor potencial de crecimiento.</p>
+        </div>
+      <div class="card2">
+        <h3>2. Plan de Acción y Presupuesto</h3>
+          <p>Elaboramos un análisis detallado de los desafíos técnicos, comerciales y legales, proponiendo un <strong>presupuesto optimizado</strong>basado en los paquetes (Simple, Mediano o Largo Plazo).</p>
+        </div>
+      <div class="card2">
+        <h3>3. Ejecución Acelerada</h3>
+          <p>Comenzamos la consultoría atacando los puntos de mejora críticos. Trabajamos como tu<strong>guía y socio estratégico</strong>para asegurar la dirección correcta y la mitigación de riesgos.</p>
+        </div>
+    </div>
+    
+    <br>
+    
+    <p style="font-size: 0.9rem; text-align: center; max-width: 800px; margin: 1rem auto;">
+  *La sesión de Diagnóstico Estratégico tiene un costo de <strong>US$60</strong>, el cual se abona previo a la videollamada. Este monto se <strong>descuenta del precio final</strong> de cualquiera de nuestros paquetes de consultoría si decides avanzar. </p>
+
+    <p style="font-size: 0.9rem; text-align: center; max-width: 800px; margin: 1rem auto; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+        **IMPORTANTE: Nuestra consultoría ofrece una guía de alto valor y direccionamiento estratégico. En caso de requerir trabajos operativos (rediseño CAD/3D de producto, diseño gráfico de packaging, desarrollo web o implementación de IA), estos se cotizarán aparte para ser gestionados y tercerizados por nuestro equipo bajo la modalidad de proyecto.
+    </p>
+</section>
 
   <section class="section">
     <h2>Servicios principales</h2>
     <div class="grid">
       <div class="card">🧠 Consultoría en innovación</div>
       <div class="card">🧰 Diseño CAD para producción</div>
-      <div class="card">⚙️ Automatización y eficiencia</div>
-      <div class="card">🏭 Producción tercerizada</div>
-      <div class="card">🔐 Patentes y propiedad intelectual</div>
-      <div class="card">🌏 Maquinaria importada</div>
+      <div class="card">⚙️ Automatización +&nbsp; Inteligencia Artificial</div>
+      <div class="card">🏭 Producción tercerizada | Proveedores</div>
+      <div class="card">🔐 Marcas, Patentes y propiedad intelectual</div>
+      <div class="card">🌏 Maquinaria importada | Desarrollos especiales</div>
     </div>
-  </section>
+</section>
 
   <section class="section">
     <h2>Quiénes somos</h2>
     <div class="card">
-      <p>Somos un equipo de inventores, diseñadores e ingenieros con experiencia real en la creación, desarrollo y producción de productos innovadores. Creamos el Mate Eléctrico, patentado en Argentina y en el exterior. Hemos producido más de 10.000 unidades, exportamos a más de 20 países, y transformamos una idea en una empresa con impacto.</p>
+      <p>Somos un equipo de inventores, diseñadores e ingenieros con experiencia real en la creación, desarrollo y producción de productos innovadores. Creamos el Mate Eléctrico, patentado en Argentina y en el exterior, exportamos a más de 20 países, y transformamos una idea en una empresa con impacto.</p>
     </div>
   </section>
 
@@ -138,7 +193,7 @@
   <section class="section">
     <h2>¿Por qué elegirnos?</h2>
     <div class="grid">
-      <div class="card">✅ Experiencia real: más de 10.000 unidades producidas, patentes activas, exportación.</div>
+      <div class="card">✅ Experiencia real: múltiples productos en venta, patentes activas, exportación.</div>
       <div class="card">✅ Enfoque integral: del diseño al producto final con cadena de producción incluida.</div>
       <div class="card">✅ Protección legal: marcas, patentes y licencias para que tu idea esté segura.</div>
     </div>
@@ -148,10 +203,11 @@
     <h2>¿Tenés una idea o necesitás mejorar tu producción?</h2>
     <p>Contactanos para trabajar juntos desde el diseño hasta la fabricación.</p>
     <button class="btn">Hablar por WhatsApp</button>
+	  
   </section>
 
   <footer>
-    © 2025 Inventos Argentinos. Todos los derechos reservados.
-  </footer>
+    © 2017-2025 Inventos Argentinos. Todos los derechos reservados.
+</footer>
 </body>
 </html>
