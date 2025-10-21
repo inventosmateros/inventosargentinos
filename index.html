@@ -1,213 +1,226 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventos Argentinos - Desarrollo de productos reales</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primario: #0097d1;
-      --secundario: #ffca28;
-      --gris-fondo: #f7f7f7;
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #111;
-      background-color: #fff;
-    }
-    header {
-      background: url('fondo-hero.jpg') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: gray;
-      padding: 0 1rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-    .btn {
-      background: var(--primario);
-      color: white;
-      padding: 1rem 2rem;
-      margin: 1rem 0.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-	   .btn2 {
-      background: #ffca28(--primario);
-      color: black;
-      padding: 1rem 2rem;
-      margin: 1rem 0.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .section {
-      padding: 4rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: var(--primario);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: var(--gris-fondo);
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-	      .card2 {
-      background: var(--primario);
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .cta {
-      background: var(--primario);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-    .cta button {
-      background: var(--secundario);
-      color: #111;
-    }
-    footer {
-      background: #eee;
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-    }
-	  #proceso-consultoria {
-        background-color: var(--secundario); /* Usando la variable amarilla definida en :root */
-        /* Opcionalmente, puedes usar un color hexadecimal o el nombre del color: */
-        /* background-color: #ffca28; */ 
-    }
-	      .cta2 {
-      background: var(--secundario);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-	    <h1><img src="logo-inventos-argentinos.png" width="300" height="auto" alt="Inventos Argentinos"/></h1>
-    <h1>Convertimos ideas en productos reales</h1>
-    <p>Desarrollo de productos, optimización industrial y protección intelectual con experiencia real de fábrica.</p>
-    <div>
-    <a href="https://wa.me/5491135858867?text=Hola,%20me%20interesa%20la%20consultoría%20para%20inventores%20que%20ofrecen." class="btn">
-    Quiero consultoría para mi emprendimiento
-</a>
-    </div>
-  </header>
-<section class="cta2" id="proceso-consultoria">
-    <h2>Nuestra Metodología de Consultoría</h2>
-    <div class="grid">
-        <div class="card2">
-            <h3>1. Diagnóstico Estratégico</h3>
-            <p><strong>Videollamada de 1 hora</strong> para auditar el estado actual del proyecto, identificar los cuellos de botella y definir las áreas con mayor potencial de crecimiento.</p>
-        </div>
-      <div class="card2">
-        <h3>2. Plan de Acción y Presupuesto</h3>
-          <p>Elaboramos un análisis detallado de los desafíos técnicos, comerciales y legales, proponiendo un <strong>presupuesto optimizado</strong>basado en los paquetes (Simple, Mediano o Largo Plazo).</p>
-        </div>
-      <div class="card2">
-        <h3>3. Ejecución Acelerada</h3>
-          <p>Comenzamos la consultoría atacando los puntos de mejora críticos. Trabajamos como tu<strong>guía y socio estratégico</strong>para asegurar la dirección correcta y la mitigación de riesgos.</p>
-        </div>
-    </div>
-    
-    <br>
-    
-    <p style="font-size: 0.9rem; text-align: center; max-width: 800px; margin: 1rem auto;">
-  *La sesión de Diagnóstico Estratégico tiene un costo de <strong>US$60</strong>, el cual se abona previo a la videollamada. Este monto se <strong>descuenta del precio final</strong> de cualquiera de nuestros paquetes de consultoría si decides avanzar. </p>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>InventosArgentinos.com | Consultoría para Inventores y Emprendedores</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Consultoría integral para inventores argentinos: diseño CAD, manufactura, automatización, IA, patentes y ventas internacionales. Convertí tu idea en un negocio sólido." />
+		<meta name="keywords" content="inventos argentinos, consultoría inventores, diseño de producto, patentes, manufactura, inteligencia artificial, ventas internacionales" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-    <p style="font-size: 0.9rem; text-align: center; max-width: 800px; margin: 1rem auto; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
-        **IMPORTANTE: Nuestra consultoría ofrece una guía de alto valor y direccionamiento estratégico. En caso de requerir trabajos operativos (rediseño CAD/3D de producto, diseño gráfico de packaging, desarrollo web o implementación de IA), estos se cotizarán aparte para ser gestionados y tercerizados por nuestro equipo bajo la modalidad de proyecto.
-    </p>
-</section>
+		<div id="wrapper">
 
-  <section class="section">
-    <h2>Servicios principales</h2>
-    <div class="grid">
-      <div class="card">🧠 Consultoría en innovación</div>
-      <div class="card">🧰 Diseño CAD para producción</div>
-      <div class="card">⚙️ Automatización +&nbsp; Inteligencia Artificial</div>
-      <div class="card">🏭 Producción tercerizada | Proveedores</div>
-      <div class="card">🔐 Marcas, Patentes y propiedad intelectual</div>
-      <div class="card">🌏 Maquinaria importada | Desarrollos especiales</div>
-    </div>
-</section>
+				<section class="intro">
+						<header>
+							<h1>Inventos Argentinos</h1>
+							<p>Consultoría integral con background real: diseño CAD, optimización de manufactura, IA aplicada y estrategia de ventas globales.</p>
+							<ul class="actions">
+								<li><a href="#perfil" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>
+						</header>
+						<div class="content">
+							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="Innovación y tecnología" /></span>
+						</div>
+					</section>
 
-  <section class="section">
-    <h2>Quiénes somos</h2>
-    <div class="card">
-      <p>Somos un equipo de inventores, diseñadores e ingenieros con experiencia real en la creación, desarrollo y producción de productos innovadores. Creamos el Mate Eléctrico, patentado en Argentina y en el exterior, exportamos a más de 20 países, y transformamos una idea en una empresa con impacto.</p>
-    </div>
-  </section>
+				<section id="perfil">
+						<header>
+							<h2>Nuestro Background: Experiencia que Ahorra Millones</h2>
+						</header>
+						<div class="content">
+							<p><strong>Mi trayectoria como inventor y emprendedor es tu mayor activo.</strong> No solo ofrecemos teoría; proporcionamos una <strong>guía práctica</strong> basada en los desafíos reales de la creación, fabricación y comercialización de productos, desde el prototipo hasta el volumen de producción y la exportación. Entiendo los costos de los errores y te ayudo a evitarlos. Nuestro equipo es un mix de ingenieros, diseñadores y expertos en automatización.</p>
+							<span class="image main"><img src="images/pic02.jpg" alt="Proceso de diseño de producto" /></span>
+						</div>
+					</section>
 
-  <section class="section">
-    <h2>Casos reales</h2>
-    <div class="grid">
-      <div class="card">✨ Mate Eléctrico: producto patentado y exportado internacionalmente.</div>
-      <div class="card">✨ Producción tercerizada con talleres locales y control de calidad propio.</div>
-      <div class="card">✨ Desarrollo de packaging reutilizable con identidad de marca.</div>
-    </div>
-  </section>
+				<section id="servicios">
+						<header>
+							<h2>Servicios Clave para la Escala</h2>
+						</header>
+						<div class="content">
+							<p>Trabajamos en las áreas críticas que definen el éxito de un producto en el mercado actual. Elegí tu camino hacia la rentabilidad.</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-brain">Consultoría Estratégica en I+D</li>
+								<li class="icon solid fa-cube">Diseño CAD/3D Listo para Moldeado e Inyección</li>
+								<li class="icon solid fa-robot">Automatización de Procesos e Integración de IA</li>
+								<li class="icon solid fa-industry">Gestión y Control de Calidad de Manufactura Local</li>
+								<li class="icon solid fa-file-contract">Estrategia y Tramitación de Patentes y Marcas</li>
+								<li class="icon solid fa-shipping-fast">Logística de Componentes y Maquinaria Global</li>
+								<li class="icon solid fa-chart-line">Ventas Nacionales y Canales Digitales (E-commerce)</li>
+								<li class="icon solid fa-globe">Estrategia de Ventas y Cobros Internacionales</li>
+							</ul>
+						</div>
+					</section>
 
-  <section class="section">
-    <h2>Premios y reconocimientos</h2>
-    <div class="grid">
-      <div class="card">🏆 Premio NAB Show Las Vegas 2018</div>
-      <div class="card">🏆 Premio FedEx 2022</div>
-      <div class="card">🏆 Premio Innovar 2021</div>
-    </div>
-  </section>
+				<section id="paquetes">
+						<header>
+							<h2>Elegí tu Paquete de Consultoría Estratégica</h2>
+						</header>
+						<div class="content">
+							<p>Nuestra consultoría está diseñada para acompañarte en cada etapa, maximizando tu inversión y minimizando los errores costosos.</p>
 
-  <section class="section">
-    <h2>¿Por qué elegirnos?</h2>
-    <div class="grid">
-      <div class="card">✅ Experiencia real: múltiples productos en venta, patentes activas, exportación.</div>
-      <div class="card">✅ Enfoque integral: del diseño al producto final con cadena de producción incluida.</div>
-      <div class="card">✅ Protección legal: marcas, patentes y licencias para que tu idea esté segura.</div>
-    </div>
-  </section>
+							<div class="table-wrapper">
+								<table class="alt">
+									<thead>
+										<tr>
+											<th>Paquete</th>
+											<th>Simple</th>
+											<th>Mediano</th>
+											<th>Largo Plazo</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Duración</td>
+											<td>10 Horas</td>
+											<td>50 Horas</td>
+											<td>200 Horas (en 6 meses)</td>
+										</tr>
+										<tr>
+											<td>Precio por Hora</td>
+											<td>US$80</td>
+											<td>US$70 (Ahorro)</td>
+											<td>US$60 (Mayor Ahorro)</td>
+										</tr>
+										<tr>
+											<td>**Inversión Total**</td>
+											<td>**US$800**</td>
+											<td>**US$3.500**</td>
+											<td>**US$12.000**</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="4">El costo del Diagnóstico Inicial (US$50) se descuenta de tu paquete.</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
 
-  <section class="cta">
-    <h2>¿Tenés una idea o necesitás mejorar tu producción?</h2>
-    <p>Contactanos para trabajar juntos desde el diseño hasta la fabricación.</p>
-    <button class="btn">Hablar por WhatsApp</button>
-	  
-  </section>
+							<section>
+								<header>
+									<h3>Enfoque por Paquete</h3>
+								</header>
+								<div class="content">
+									<ul class="actions stacked">
+										<li><a href="https://wa.me/54911xxxxxxxx?text=Hola,%20quisiera%20el%20Paquete%20Simple%20de%2010hs%20para%20validación." class="button large">Simple: Validación y Bases Legales</a></li>
+										<li><a href="https://wa.me/54911xxxxxxxx?text=Hola,%20quisiera%20el%20Paquete%20Mediano%20de%2050hs%20para%20desarrollo%20y%20mercado%20nacional." class="button large">Mediano: Desarrollo, Manufactura y Ventas Nacionales</a></li>
+										<li><a href="https://wa.me/54911xxxxxxxx?text=Hola,%20quisiera%20el%20Paquete%20Largo%20Plazo%20para%20escalabilidad%20e%20internacionalización." class="button large primary">Largo Plazo: Escalabilidad, IA y Exportación</a></li>
+									</ul>
+								</div>
+							</section>
 
-  <footer>
-    © 2017-2025 Inventos Argentinos. Todos los derechos reservados.
-</footer>
-</body>
+						</div>
+					</section>
+					
+				<section id="proceso-consultoria">
+						<header>
+							<h2>Nuestra Metodología de Consultoría</h2>
+						</header>
+						<div class="content">
+							<div class="gallery">
+								<a href="#" class="landscape">
+									<h3>1. Diagnóstico Estratégico</h3>
+									<p>Videollamada de 1 hora para auditar el estado actual del proyecto, identificar los cuellos de botella y definir las áreas con mayor potencial.</p>
+								</a>
+								<a href="#">
+									<h3>2. Plan de Acción y Presupuesto</h3>
+									<p>Elaboramos un análisis detallado de desafíos técnicos, comerciales y legales, proponiendo un presupuesto optimizado.</p>
+								</a>
+								<a href="#">
+									<h3>3. Ejecución Acelerada</h3>
+									<p>Comenzamos la consultoría atacando los puntos de mejora críticos. Trabajamos como tu guía y socio estratégico.</p>
+								</a>
+							</div>
+							
+							<p style="font-size: 0.9rem; text-align: center; margin-top: 2rem;">
+							*La sesión de Diagnóstico Estratégico tiene un costo de **US$50**, el cual se **descuenta del precio final** de cualquiera de nuestros paquetes si decides avanzar.
+							</p>
+							
+							<p style="font-size: 0.9rem; text-align: center; margin: 1rem auto; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+							**IMPORTANTE: Nuestra consultoría ofrece una guía estratégica. Los trabajos operativos (rediseño CAD/3D, diseño de packaging, desarrollo web) se cotizan aparte para ser gestionados y tercerizados.
+							</p>
+
+						</div>
+					</section>
+
+				<section>
+						<header>
+							<h2>¿Listo para Lanzar tu Invento al Mundo?</h2>
+						</header>
+						<div class="content">
+							<p>No pierdas tiempo en errores costosos. Contactanos hoy y comenzá a construir un negocio rentable basado en tu innovación.</p>
+							<ul class="actions">
+								<li>
+									<a href="https://wa.me/54911xxxxxxxx?text=Hola,%20me%20interesa%20la%20consultoría%20para%20inventores%20que%20ofrecen." class="button primary large">
+										Quiero mi Diagnóstico Estratégico
+									</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+
+				<section>
+						<header>
+							<h2>Contacto</h2>
+						</header>
+						<div class="content">
+							<p>Si tenés consultas específicas o querés coordinar una reunión fuera de los paquetes, usá el formulario o contactanos directamente.</p>
+							<form>
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="Nombre" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Mensaje" rows="7"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Enviar Mensaje" class="button primary" /></li>
+								</ul>
+							</form>
+						</div>
+						<footer>
+							<ul class="items">
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:tuemail@inventosargentinos.com">contacto@inventosargentinos.com</a>
+								</li>
+								<li>
+									<h3>WhatsApp</h3>
+									<a href="https://wa.me/54911xxxxxxxx">(+54 9 11) 3585-8867</a>
+								</li>
+								<li>
+									<h3>Ubicación</h3>
+									<span>Buenos Aires, Argentina (Consultoría Online Global)</span>
+								</li>
+								<li>
+									<h3>Síguenos</h3>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/company/inventos-argentinos" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</footer>
+					</section>
+
+				<div class="copyright">&copy; InventosArgentinos.com. Todos los derechos reservados.</div>
+
+			</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
