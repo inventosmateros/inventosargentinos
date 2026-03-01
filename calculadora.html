@@ -5,66 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculador</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9; }
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-        h2 { text-align: center; color: #333; margin-top: 0; font-size: 1.5em; }
-        .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
-        /* Cambiamos a text para capturar la coma manualmente */
-        input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1.1em; box-sizing: border-box; outline: none; }
-        input:focus { border-color: #007bff; }
-        .result-box { margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; min-height: 60px; transition: 0.3s; display: none; }
-        .info { font-size: 0.85em; margin-top: 15px; color: #888; text-align: center; line-height: 1.4; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f0f2f5; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { text-align: center; color: #1c1e21; margin-bottom: 20px; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #4b4f56; }
+        input { width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 1.2em; box-sizing: border-box; outline: none; transition: border-color 0.2s; }
+        input:focus { border-color: #0084ff; }
+        .result-box { margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; font-weight: bold; display: none; }
+        .btn-clear { width: 100%; padding: 10px; margin-top: 10px; background: #ebedf0; border: none; border-radius: 8px; cursor: pointer; color: #4b4f56; font-weight: 600; }
         
-        /* Estados */
-        .perfecto { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .aceptable { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
-        .peligro { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .falla-total { background-color: #721c24; color: white; border: 1px solid #491217; text-transform: uppercase; animation: flash 1s infinite; }
+        /* Colores de Alerta */
+        .perfecto { background-color: #e7f3ff; color: #1877f2; border: 1px solid #cce4ff; }
+        .aceptable { background-color: #e6f4ea; color: #1e7e34; border: 1px solid #ceead6; }
+        .peligro { background-color: #fff9e6; color: #947c00; border: 1px solid #ffeeba; }
+        .falla-total { background-color: #fa3e3e; color: white; text-transform: uppercase; animation: pulse 1s infinite; }
 
-        @keyframes flash {
-            0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; }
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <h2>Mezcla Resina $2:1$</h2>
+    <h2>Mezcla $2:1$</h2>
     
     <div class="input-group">
-        <label>Peso Resina A (Gramos):</label>
-        <input type="text" id="pesoA" placeholder="Ej: 20,15" inputmode="decimal" oninput="calcular()">
+        <label>Peso Componente A:</label>
+        <input type="text" id="pesoA" placeholder="0,00" inputmode="decimal" oninput="calcular()">
     </div>
 
     <div class="input-group">
-        <label>Peso Resina B (Gramos):</label>
-        <input type="text" id="pesoB" placeholder="Ej: 10.3" inputmode="decimal" oninput="calcular()">
+        <label>Peso Componente B:</label>
+        <input type="text" id="pesoB" placeholder="0,00" inputmode="decimal" oninput="calcular()">
     </div>
 
     <div id="resultado" class="result-box">
-        <div id="mensaje"></div>
-        <div id="error-porcentaje" style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;"></div>
+        <div id="mensaje" style="font-size: 1.2em;"></div>
+        <div id="error-val" style="font-size: 0.9em; margin-top: 8px; font-weight: normal;"></div>
     </div>
 
-    <div class="info">
-        Relación ideal: El componente B debe ser el 50% del peso de A.<br>
-        <strong>Acepta puntos (.) y comas (,)</strong>
-    </div>
+    <button class="btn-clear" onclick="limpiar()">Limpiar campos</button>
 </div>
 
 <script>
 function calcular() {
-    // Capturamos el texto y reemplazamos coma por punto
-    let rawA = document.getElementById('pesoA').value.replace(',', '.');
-    let rawB = document.getElementById('pesoB').value.replace(',', '.');
+    // Reemplaza TODAS las comas por puntos antes de procesar
+    let valA = document.getElementById('pesoA').value.replace(/,/g, '.');
+    let valB = document.getElementById('pesoB').value.replace(/,/g, '.');
 
-    const a = parseFloat(rawA);
-    const b = parseFloat(rawB);
-    
+    const a = parseFloat(valA);
+    const b = parseFloat(valB);
     const resBox = document.getElementById('resultado');
-    const msg = document.getElementById('mensaje');
-    const errText = document.getElementById('error-porcentaje');
 
     if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
         resBox.style.display = 'none';
@@ -72,16 +63,17 @@ function calcular() {
     }
 
     resBox.style.display = 'block';
-    
     const bIdeal = a / 2;
     const error = Math.abs((b - bIdeal) / bIdeal) * 100;
 
-    errText.innerText = "Desviación: " + error.toFixed(2) + "%";
-    resBox.className = "result-box"; 
+    const msg = document.getElementById('mensaje');
+    const errText = document.getElementById('error-val');
+    errText.innerText = "Desviación del ideal: " + error.toFixed(2) + "%";
+    resBox.className = "result-box";
 
     if (error < 0.5) {
         msg.innerText = "Mezcla Perfecta ✨";
-        resBox.classList.add('perfecto');
+        resBox.classList.add('aceptable'); // Uso verde para perfecto/aceptable
     } else if (error >= 0.5 && error < 1.8) {
         msg.innerText = "Error Aceptable ✅";
         resBox.classList.add('aceptable');
@@ -92,6 +84,12 @@ function calcular() {
         msg.innerText = "PELIGRO DE FALLA ❌";
         resBox.classList.add('falla-total');
     }
+}
+
+function limpiar() {
+    document.getElementById('pesoA').value = '';
+    document.getElementById('pesoB').value = '';
+    document.getElementById('resultado').style.display = 'none';
 }
 </script>
 
