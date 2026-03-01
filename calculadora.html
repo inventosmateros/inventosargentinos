@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculador 2:1</title>
+    <title>Calculador</title>
     <style>
         body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-        h2 { text-align: center; color: #333; margin-top: 0; }
+        h2 { text-align: center; color: #333; margin-top: 0; font-size: 1.5em; }
         .input-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        /* Cambiamos a text para capturar la coma manualmente */
         input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1.1em; box-sizing: border-box; outline: none; }
         input:focus { border-color: #007bff; }
-        .result-box { margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; min-height: 60px; transition: 0.3s; }
-        .info { font-size: 0.9em; margin-top: 10px; color: #666; text-align: center; }
+        .result-box { margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; min-height: 60px; transition: 0.3s; display: none; }
+        .info { font-size: 0.85em; margin-top: 15px; color: #888; text-align: center; line-height: 1.4; }
         
-        /* Colores de estado */
+        /* Estados */
         .perfecto { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .aceptable { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
         .peligro { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
@@ -29,30 +30,38 @@
 <body>
 
 <div class="card">
-    <h2>Calculador de Mezcla</h2>
+    <h2>Mezcla Resina $2:1$</h2>
     
     <div class="input-group">
         <label>Peso Resina A (Gramos):</label>
-        <input type="number" id="pesoA" placeholder="Ej: 20.15" step="0.01" oninput="calcular()">
+        <input type="text" id="pesoA" placeholder="Ej: 20,15" inputmode="decimal" oninput="calcular()">
     </div>
 
     <div class="input-group">
         <label>Peso Resina B (Gramos):</label>
-        <input type="number" id="pesoB" placeholder="Ej: 10.3" step="0.01" oninput="calcular()">
+        <input type="text" id="pesoB" placeholder="Ej: 10.3" inputmode="decimal" oninput="calcular()">
     </div>
 
-    <div id="resultado" class="result-box" style="display: none;">
+    <div id="resultado" class="result-box">
         <div id="mensaje"></div>
-        <div id="error-porcentaje" style="font-size: 0.8em; margin-top: 5px;"></div>
+        <div id="error-porcentaje" style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;"></div>
     </div>
 
-    <div class="info">Relación ideal 2:1 (A:B)</div>
+    <div class="info">
+        Relación ideal: El componente B debe ser el 50% del peso de A.<br>
+        <strong>Acepta puntos (.) y comas (,)</strong>
+    </div>
 </div>
 
 <script>
 function calcular() {
-    const a = parseFloat(document.getElementById('pesoA').value);
-    const b = parseFloat(document.getElementById('pesoB').value);
+    // Capturamos el texto y reemplazamos coma por punto
+    let rawA = document.getElementById('pesoA').value.replace(',', '.');
+    let rawB = document.getElementById('pesoB').value.replace(',', '.');
+
+    const a = parseFloat(rawA);
+    const b = parseFloat(rawB);
+    
     const resBox = document.getElementById('resultado');
     const msg = document.getElementById('mensaje');
     const errText = document.getElementById('error-porcentaje');
@@ -64,13 +73,11 @@ function calcular() {
 
     resBox.style.display = 'block';
     
-    // El ideal de B es la mitad de A
     const bIdeal = a / 2;
-    // Cálculo del error relativo porcentual
     const error = Math.abs((b - bIdeal) / bIdeal) * 100;
 
     errText.innerText = "Desviación: " + error.toFixed(2) + "%";
-    resBox.className = "result-box"; // Limpiar clases
+    resBox.className = "result-box"; 
 
     if (error < 0.5) {
         msg.innerText = "Mezcla Perfecta ✨";
