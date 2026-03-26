@@ -23,4 +23,4 @@ Este es el sitio oficial de [inventosargentinos.com](https://inventosargentinos.
 
 ## ✍️ Autor
 
-Inventado, desarrollado y producido por el equipo de [Mate Eléctrico](https://mateelectrico.com), con más de 10.000 unidades vendidas, patentes registradas y premios internacionales.
+Del creador del Mate Eléctrico. Pablo Damián Gallego.
